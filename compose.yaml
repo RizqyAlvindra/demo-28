@@ -3,5 +3,6 @@ services:
   frontend:
     container_name: wh-fe
     image: lolrandom:fe
+    stdin_open: true
     ports:
       - 3000:3000
