@@ -1,0 +1,7 @@
+services:
+
+  frontend:
+    container_name: wh-fe
+    image: lolrandom:fe
+    ports:
+      - 3000:3000
