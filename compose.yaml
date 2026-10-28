@@ -2,7 +2,7 @@ services:
 
   frontend:
     container_name: wh-fe
-    image: lolrandom:fe
+    image: alvindra/wayshub-frontend:28
     stdin_open: true
     ports:
       - 3000:3000
