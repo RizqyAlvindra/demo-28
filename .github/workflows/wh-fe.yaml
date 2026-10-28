@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: checkout scm
-        uses: action/checkout@v7
+        uses: actions/checkout@v7
 
       - name: Build Image
         run: docker build -t ${{ vars.IMAGE }} .
