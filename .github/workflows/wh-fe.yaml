@@ -29,4 +29,22 @@ jobs:
       - name: Push Image
         run: docker push ${{ vars.IMAGE }}
 
-    
+
+  deploy:
+
+    runs-on: ubuntu-22.04
+    environment: production
+
+    steps:
+      - name: Deploy wayshubfe on server
+        uses: appleboy/ssh-action@v1.2.5
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd compose/frontend
+            docker compose pull
+            docker compose down
+            docker compose up -d
